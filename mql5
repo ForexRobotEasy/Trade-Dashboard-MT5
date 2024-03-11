@@ -1,0 +1,90 @@
+
+// Trade Dashboard MT5
+// Developer's Site: forexroboteasy.com
+// Development: Forex Robot Easy Team
+
+// Risk Management Function
+void manageRisk(double riskLevel) {
+    // Code to manage risk based on the specified risk level
+    // Example: Adjust position size based on risk level
+    double positionSize = AccountEquity() * riskLevel;
+    // Code to open or modify trades based on the calculated position size
+    // ...
+}
+
+// Reward-to-Risk Ratio Function
+void setRewardToRiskRatio(double reward, double risk) {
+    // Code to set the reward-to-risk ratio for trades
+    // Example: Calculate the target Take Profit and Stop Loss levels based on the specified reward and risk
+    double takeProfit = reward * risk;
+    double stopLoss = risk;
+    // Code to open or modify trades based on the calculated Take Profit and Stop Loss levels
+    // ...
+}
+
+// Partial TP or SL Positions Function
+void setPartialPositions(int numPartialPositions) {
+    // Code to set multiple partial Take Profit or Stop Loss positions
+    // Example: Calculate the distance between each partial position based on the total position size and the specified number of positions
+    double positionSize = OrderLots();
+    double partialPositionDistance = positionSize / (numPartialPositions + 1);
+    // Code to open or modify trades with multiple partial positions based on the calculated distance
+    // ...
+}
+
+// Trailing Stop Options Function
+void setTrailingStopOptions(int trailingStopType) {
+    // Code to set various trailing stop options
+    // Example: Implement different trailing stop types based on the specified trailingStopType
+    if (trailingStopType == 1) {
+        // Code to set a fixed trailing stop
+        // ...
+    } else if (trailingStopType == 2) {
+        // Code to set a dynamic trailing stop
+        // ...
+    } else if (trailingStopType == 3) {
+        // Code to set a percentage trailing stop
+        // ...
+    }
+    // Code to apply the trailing stop to open trades
+    // ...
+}
+
+// Risk-Free Options Function
+void enableRiskFreeOptions(bool enable) {
+    // Code to enable or disable risk-free options
+    // Example: Modify trades to protect the initial investment if risk-free options are enabled
+    if (enable) {
+        // Code to implement risk-free options
+        // ...
+    } else {
+        // Code to disable risk-free options
+        // ...
+    }
+}
+
+// Main Function
+void OnStart() {
+    // Code to create the trade dashboard and user-friendly visualization
+    // ...
+    
+    // Example usage of the trading functions
+    double riskLevel = 0.02; // Set the desired risk level
+    manageRisk(riskLevel);
+    
+    double reward = 2; // Set the desired reward-to-risk ratio
+    double risk = 1; // Set the desired risk level
+    setRewardToRiskRatio(reward, risk);
+    
+    int numPartialPositions = 3; // Set the desired number of partial positions
+    setPartialPositions(numPartialPositions);
+    
+    int trailingStopType = 2; // Set the desired trailing stop type
+    setTrailingStopOptions(trailingStopType);
+    
+    bool enableRiskFree = true; // Set whether to enable or disable risk-free options
+    enableRiskFreeOptions(enableRiskFree);
+    
+    // Code to execute trades based on the specified trading functions
+    // ...
+}
